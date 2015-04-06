@@ -54,8 +54,11 @@ from pymongo import MongoClient
   #       courses.insert(course)
 
 def main(args):
-  client = MongoClient('mongodb://127.0.0.1:3001/meteor')
-  courses = client.meteor.courses
+  # client = MongoClient('mongodb://127.0.0.1:3001/meteor')
+  # courses = client.meteor.courses
+
+  client = MongoClient('mongodb://localhost/CornellCourseReview')
+  courses = client.CornellCourseReview.courses
 
   # file_names = [x for x in os.listdir('.') if x.endswith('json')]
   file_names = [x for x in os.listdir(args[1]) if x.startswith('classes.json')]
